@@ -1,0 +1,64 @@
+class Solution {
+    public void nextPermutation(int[] arr) {
+        
+        int j =-1;
+        for(int i= arr.length-2;i>=0;i--){
+            if(arr[i]<arr[i+1]){
+                j = i;
+                break;
+            }
+        }
+
+        if(j==-1){
+            reverse(arr,0,arr.length-1);
+             return ;
+        }
+
+        for(int k = arr.length-1;k>=0;k--)
+        {
+            if(arr[k]>arr[j]){
+                int temp= arr[j];
+                arr[j]=arr[k];
+                arr[k]=temp;
+                break;
+            }
+        }
+
+        reverse(arr,j+1,arr.length-1);
+
+        return ;
+
+}
+
+public static void reverse(int[] arr, int start, int end)
+{
+    while(start<end){
+        int temp = arr[start];
+        arr[start]= arr[end];
+        arr[end]= temp;
+         start++;
+         end--;
+    }
+
+}
+
+
+
+
+}
+
+
+
+
+// step 1 - find the break point    i = collection.lenght-2  (a[i]<a[i+1])
+
+// example = 123654 here  3 is the break point
+
+// step 2- find the slight greater elemnt (sl) than the break point 
+
+// in our case it is 4 
+
+// step 3 - swap the values at sl and break point 
+
+
+// step 4-reverse the the right sub arrray of the break point 
