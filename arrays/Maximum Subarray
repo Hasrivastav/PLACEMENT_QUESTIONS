@@ -16,3 +16,30 @@ class Solution {
 
     }
 }
+
+////if negative value is consisdered 
+class Solution{
+
+    // arr: input array
+    // n: size of array
+    //Function to find the sum of contiguous subarray with maximum sum.
+    long maxSubarraySum(int arr[], int n){
+        
+        // Your code here
+       
+        int j =1;
+        long maxSum = arr[0];
+         long sum = arr[0];
+        while(j<arr.length){
+            
+             sum = Math.max(arr[j] , sum+arr[j]);
+            
+            
+            maxSum = Math.max(maxSum , sum);
+            j++;
+            
+        }
+        return maxSum;
+    }
+    
+}

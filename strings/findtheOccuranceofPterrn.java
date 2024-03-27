@@ -1,4 +1,4 @@
-
+import java.util.*;
 class findtheOccuranceofPterrn
 {
      static int prime = 101; // Define prime as a static property
@@ -40,5 +40,3 @@ class findtheOccuranceofPterrn
    
 }
 
-
-it is
